@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPWA - Rutinas y Temporizador</title>
+    <link rel="stylesheet" href="EJERCICIOS.CSS">
+    <!-- Enlace al futuro manifest -->
+    <link rel="manifest" href="EJERCICIOS.JSON">
+</head>
+<body>
+
+    <!-- VISTA 1: Lista de Rutinas -->
+    <div id="home-view" class="view active">
+        <header>
+            <h1>🏋️‍♂️ Mis Rutinas</h1>
+            <p>Selecciona una rutina para comenzar</p>
+        </header>
+        
+        <main class="routine-list">
+            <div class="card" onclick="startRoutine('Pierna y Glúteo', 45)">
+                <h3>🔥 Pierna y Glúteo</h3>
+                <p>4 ejercicios • 45 seg de descanso</p>
+                <span class="btn-start">Iniciar</span>
+            </div>
+            <div class="card" onclick="startRoutine('Abdomen Express', 30)">
+                <h3>⚡ Abdomen Express</h3>
+                <p>3 ejercicios • 30 seg de descanso</p>
+                <span class="btn-start">Iniciar</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- VISTA 2: Temporizador Activo -->
+    <div id="timer-view" class="view">
+        <header>
+            <button class="btn-back" onclick="goHome()">← Salir</button>
+            <h2 id="routine-title">Nombre de Rutina</h2>
+        </header>
+
+        <main class="timer-container">
+            <div class="timer-box">
+                <span id="timer-display">00:45</span>
+                <p id="timer-status">Descanso</p>
+            </div>
+
+            <div class="controls">
+                <button id="btn-toggle" onclick="toggleTimer()">Pausar</button>
+                <button onclick="skipTimer()">Siguiente</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="EJERCICIOS.js"></script>
+</body>
+</html>
